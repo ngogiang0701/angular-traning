@@ -1,0 +1,29 @@
+<p>
+  heroes works!
+  {{hero.name}}
+</p>
+<h1>Danh sách các Hero</h1>
+
+<div *ngIf="selectedHero">
+	<h2>Hero is selected: {{selectedHero.name}} | Details;</h2>
+	<label>
+	Id:
+	<input [(ngModel)]="selectedHero.id" placeholder="Id">
+
+	</label>
+	<label>
+	Name:
+	<input [(ngModel)]="selectedHero.name" placeholder="Tên">
+
+	</label>
+</div>
+<table>
+	<tr>
+		<th>STT</th>
+		<th>Name</th>
+	</tr>
+	<tr *ngFor='let hero001 of hero' (click)="onSelect(hero001)">
+		<td>{{hero001.id}}</td>
+		<td>{{hero001.name | uppercase}}</td>
+	</tr>
+</table>
